@@ -1,5 +1,5 @@
 Set @NpcName = "Services NPC",
-    @NpcSubname = "AzerothCore",
+    @NpcSubname = "FrozenCore",
     @NpcEntry = 55002,
     @NpcDisplayID = 31833,
     @NpcLevel = 80;
