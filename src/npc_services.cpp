@@ -53,7 +53,7 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
                 player->SetPower(POWER_MANA, player->GetMaxPower(POWER_MANA));
 
             player->SetHealth(player->GetMaxHealth());
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFHP & MP succesfully restored!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFHP & MP successfully restored!");
             player->CastSpell(player, 31726);
             break;
 
@@ -74,7 +74,7 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
                 }
             }
 
-           ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFInstances succesfully reseted!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFInstances successfully reset!");
             player->CastSpell(player, 59908);
             return true;
             break;
@@ -89,14 +89,14 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
             }
 
             player->RemoveAllSpellCooldown();
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFCooldowns succesfully reseted!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFCooldowns successfully reset!");
             player->CastSpell(player, 31726);
             break;
 
         case 4: // Leave Combat
             CloseGossipMenuFor(player);
             player->CombatStop();
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFCombat succesfully removed!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFCombat successfully removed!");
             player->CastSpell(player, 31726);
             break;
 
@@ -104,14 +104,14 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
             CloseGossipMenuFor(player);
             if (player->HasAura(15007))
                 player->RemoveAura(15007);
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFSickness succesfully removed!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFSickness successfully removed!");
             player->CastSpell(player, 31726);
             break;
 
         case 6: // Repair Items
             CloseGossipMenuFor(player);
             player->DurabilityRepairAll(false, 0, false);
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFItems repaired succesfully!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFItems successfully repaired!");
             player->CastSpell(player, 31726);
             break;
 
@@ -119,7 +119,7 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
             CloseGossipMenuFor(player);
             player->resetTalents(true);
             player->SendTalentsInfoData(false);
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFTalents reseted succesfully!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFTalents successfully reset!");
             player->CastSpell(player, 31726);
             break;
 
@@ -147,7 +147,7 @@ bool NpcServices::OnGossipSelect(Player* player, Creature* /*creature*/, uint32 
             player->CastSpell(player, 63624);
             player->learnSpell(63645);
             player->UpdateSpecCount(2);
-            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES \n |cffFFFFFFDual Talents Learned Succesfully!");
+            ChatHandler(player->GetSession()).SendNotification("|cffFFFF00NPC SERVICES: |cffFFFFFFDual talents learned successfully!");
             return true;
             break;
 
